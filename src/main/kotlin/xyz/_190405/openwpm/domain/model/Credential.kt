@@ -4,29 +4,30 @@ import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonProperty
 import javax.persistence.*
 
-enum class AccountRole(val value: Int) {
-	USER(0),
-	READONLY(1),
-	ADMIN(2);
-
-	companion object {
-		fun fromInt(value: Int) = values().first { it.value == value }
-	}
-}
-
 @Entity
-data class Account(
+data class Credential(
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@JsonIgnore
 	val id: Int,
 
+	@Column(nullable = false)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	val virtualId: Int,
+
 	@Column(nullable = false, unique = true)
+	@JsonIgnore
+	val accountId: Int,
+
+	@Column(nullable = false)
+	val url: String,
+
+	@Column(nullable = false)
 	val username: String,
 
 	@Column(nullable = false)
 	val password: String,
 
 	@Column(nullable = false)
-	val role: AccountRole
+	val extra: String,
 )
