@@ -29,6 +29,6 @@ jobs:
           - .gradle
         key: ${{ hashFiles('build.gradle.kts') }}
     - name: Build with Gradle
-      run: ./gradlew build -x test
+      run: ./gradlew build -x test --daemon --configure-on-demand --parallel
     - name: Test with Gradle
-      run: ./gradlew test --no-daemon
+      run: ./gradlew test --no-daemon --configure-on-demand
