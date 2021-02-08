@@ -7,6 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest
 class OpenwpmApplicationTests {
 
 	@Test
-	fun contextLoads() {}
+	fun contextLoads() {
+
+	}
 
 }
