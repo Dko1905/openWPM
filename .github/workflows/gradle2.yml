@@ -26,8 +26,11 @@ jobs:
       uses: actions/cache@v2
       with:
         path: |
-          - .gradle
-        key: ${{ hashFiles('build.gradle.kts') }}
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-
     - name: Build with Gradle
       run: ./gradlew build -x test --daemon --configure-on-demand --parallel
     - name: Test with Gradle
