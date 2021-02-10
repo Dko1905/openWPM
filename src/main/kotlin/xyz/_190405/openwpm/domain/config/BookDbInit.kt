@@ -17,8 +17,16 @@ class BookDbInit {
 
 	@PostConstruct
 	fun init() {
-		log.info("Adding " + bookRepository.save(Book(0, "The C Programming Lanuage", Instant.now(), "David")))
-		log.info("Adding " + bookRepository.save(Book(0, "The Rust Programming Lanuage", Instant.now(), "Someone Else")))
-		log.info("Adding " + bookRepository.save(Book(0, "Anonymity", Instant.now(), null)))
+		fun addBook(title: String) {
+			val book = Book(0, title, Instant.now())
+			if (bookRepository.findByTitle(title).toList().isEmpty()) {
+				log.info("Saved book ${bookRepository.save(book)}")
+			} else {
+				log.info("Did not add book $book")
+			}
+		}
+
+		addBook("Hello world!")
+		addBook("Hello world2!")
 	}
 }

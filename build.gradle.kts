@@ -17,14 +17,20 @@ repositories {
 }
 
 dependencies {
+	// Basic spring dependencies
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springframework.boot:spring-boot-starter-security")
+	// Openapi & swagger
+	implementation("org.springdoc:springdoc-openapi-ui:1.5.2")
+	implementation("org.springdoc:springdoc-openapi-data-rest:1.5.2")
+	// Database
+	implementation("org.mariadb.jdbc:mariadb-java-client:1.5.7")
+	runtimeOnly("com.h2database:h2")
+	// Other
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-	implementation("org.springdoc:springdoc-openapi-ui:1.5.2")
-	implementation("org.springdoc:springdoc-openapi-data-rest:1.5.2")
-	runtimeOnly("com.h2database:h2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
