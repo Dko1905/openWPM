@@ -1,0 +1,11 @@
+{
+  "name": "openWPM",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "repository": "https://github.com/Dko1905/openWPM.git",
+  "author": "Daniel Florescu <Daniel.florescu1905@protonmail.ch>",
+  "license": "AGPL-3.0",
+  "devDependencies": {
+    "typescript": "^4.1.4"
+  }
+}
