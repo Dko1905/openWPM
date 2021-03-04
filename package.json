@@ -1,11 +1,23 @@
 {
-  "name": "openWPM",
+  "name": "open-wpm",
   "version": "1.0.0",
   "main": "dist/index.js",
-  "repository": "https://github.com/Dko1905/openWPM.git",
-  "author": "Daniel Florescu <Daniel.florescu1905@protonmail.ch>",
   "license": "AGPL-3.0",
   "devDependencies": {
-    "typescript": "^4.1.4"
-  }
+    "@types/express": "^4.17.11",
+    "@types/node": "^14.14.31",
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "@typescript-eslint/parser": "^4.16.1",
+    "eslint": "^7.21.0",
+    "typescript": "^4.2.2"
+  },
+  "dependencies": {
+    "@abraham/reflection": "^0.7.0",
+    "express": "^4.17.1",
+    "html-entities": "^2.1.0",
+    "tsyringe": "^4.4.0"
+  },
+  "description": "Open Web Password Manager",
+  "repository": "https://github.com/Dko1905/openWPM.git",
+  "author": "Daniel Florescu <Daniel.florescu1905@protonmail.ch>"
 }
